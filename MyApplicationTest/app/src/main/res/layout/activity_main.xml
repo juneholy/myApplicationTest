@@ -43,4 +43,14 @@
         android:layout_height="wrap_content"
         android:text="view"
         android:onClick="openViewActivity"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="send notification"
+        android:onClick="sendNotify"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ue log"
+        android:onClick="openUELog"/>
 </LinearLayout>

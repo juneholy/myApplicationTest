@@ -30,6 +30,8 @@
         <activity android:name=".eventbus.EventBusActivity2"
             />
         <activity android:name=".ViewActivity"
+        />
+        <activity android:name=".uelog.UELogActivity"
             />
     </application>
 
