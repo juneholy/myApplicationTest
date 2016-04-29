@@ -5,15 +5,15 @@ import android.app.Notification.Builder;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.example.houlinjiang.myapplicationtest.bitmap.ImageActivity;
 import com.example.houlinjiang.myapplicationtest.eventbus.EventBusActivity;
 import com.example.houlinjiang.myapplicationtest.lifecycle.LifeCycleActivity;
 import com.example.houlinjiang.myapplicationtest.sqlite.SQLiteActivity;
 import com.example.houlinjiang.myapplicationtest.uelog.UELogActivity;
-import com.example.houlinjiang.myapplicationtest.uelog.UELogManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        startHttp();
     }
 
     public void openLifeCycleActivity(View v) {
@@ -63,6 +64,17 @@ public class MainActivity extends AppCompatActivity {
     public void openUELog(View view) {
         Intent intent = new Intent();
         intent.setClass(MainActivity.this, UELogActivity.class);
+        startActivity(intent);
+    }
+    public void openImage(View view) {
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this, ImageActivity.class);
+        startActivity(intent);
+    }
+
+    public void openFlipCard(View view) {
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this, FlipCardActivity.class);
         startActivity(intent);
     }
 }

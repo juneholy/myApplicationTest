@@ -53,4 +53,14 @@
         android:layout_height="wrap_content"
         android:text="ue log"
         android:onClick="openUELog"/>
+    <Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="image"
+    android:onClick="openImage"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="flip card"
+        android:onClick="openFlipCard"/>
 </LinearLayout>
