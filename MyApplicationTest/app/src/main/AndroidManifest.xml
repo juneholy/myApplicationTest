@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.example.houlinjiang.myapplicationtest"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest
+    package="com.example.houlinjiang.myapplicationtest"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="18"/>
 
     <!-- 写权限 -->
-    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
     <!-- 读权限 -->
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <!--获取网络状态-->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <!--访问网络-->
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!--读写外部存储的权限-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -35,11 +42,23 @@
         <activity android:name=".eventbus.EventBusActivity2"
             />
         <activity android:name=".ViewActivity"
-        />
+            />
         <activity android:name=".uelog.UELogActivity"
             />
         <activity android:name=".bitmap.ImageActivity"
-/>
+            />
+        <activity
+        android:name=".BarActivity"
+        android:label="what"
+        android:parentActivityName=".MainActivity" >
+        <!--  meta-data 用于支持 support 4.0 以及以下来指明上级活动 -->
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity" />
+    </activity>
+        <service android:name=".RSSPullservice"
+                 android:exported="false"/>
+
     </application>
 
 </manifest>

@@ -4,7 +4,9 @@ import android.app.Notification;
 import android.app.Notification.Builder;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -21,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt("fhuiehwuirh", 1);
+        editor.commit();
 //        startHttp();
     }
 
@@ -72,9 +78,15 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openFlipCard(View view) {
+    public void openAnimation(View view) {
         Intent intent = new Intent();
-        intent.setClass(MainActivity.this, FlipCardActivity.class);
+        intent.setClass(MainActivity.this, AnimationActivity.class);
+        startActivity(intent);
+    }
+
+    public void openActivityWithBar(View view) {
+        Intent intent = new Intent();
+        intent.setClass(MainActivity.this, BarActivity.class);
         startActivity(intent);
     }
 }

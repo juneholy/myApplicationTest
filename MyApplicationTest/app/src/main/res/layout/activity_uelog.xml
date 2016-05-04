@@ -6,7 +6,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="button 1"
+        android:text="按了会崩溃"
         android:onClick="onBtn1click"/>
     <Button
         android:layout_width="match_parent"
