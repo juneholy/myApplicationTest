@@ -11,6 +11,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.houlinjiang.myapplicationtest.MainActivity">
 
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,56 +26,71 @@
         android:textColor="#d20bb8"
         />
 
-    <Button
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:onClick="openLifeCycleActivity"
-        android:text="lifecycle"/>
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:onClick="openLifeCycleActivity"
+            android:text="lifecycle"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:onClick="openSQLiteActivity"
-        android:text="SQLite"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:onClick="openSQLiteActivity"
+            android:text="SQLite"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:onClick="openEventBusActivity"
-        android:text="EventBus"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:onClick="openEventBusActivity"
+            android:text="EventBus"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="openViewActivity"
-        android:text="view"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="openViewActivity"
+            android:text="view"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="sendNotify"
-        android:text="send notification"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sendNotify"
+            android:text="send notification"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="openUELog"
-        android:text="ue log"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="openUELog"
+            android:text="ue log"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="openImage"
-        android:text="image"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="openImage"
+            android:text="image"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="openAnimation"
-        android:text="flip card"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="action bar"
-        android:onClick="openActivityWithBar"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="openAnimationFlip"
+            android:text="flip card"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="openActivityWithBar"
+            android:text="action bar"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="openAnimation"
+            android:text="animation"/>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

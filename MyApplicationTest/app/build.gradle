@@ -25,4 +25,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'ch.acra:acra:4.8.5'
     compile files('libs/eventbus.jar')
+    compile files('libs/volly.jar')
 }

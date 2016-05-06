@@ -89,4 +89,7 @@ public class MainActivity extends AppCompatActivity {
         intent.setClass(MainActivity.this, BarActivity.class);
         startActivity(intent);
     }
+
+    public void openAnimationFlip(View view) {
+    }
 }
