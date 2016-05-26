@@ -3,10 +3,9 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="http://www.baidu.com"
         android:id="@+id/url"/>
     <Button
         android:layout_width="match_parent"
