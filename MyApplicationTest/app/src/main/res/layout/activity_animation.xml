@@ -3,30 +3,47 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-    <FrameLayout xmlns:android="/apk/res/android"
-                 android:layout_width="match_parent"
-                 android:layout_height="match_parent">
-
-        <ScrollView xmlns:android="/apk/res/android"
-                    android:id="@+id/content"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-            <TextView style="?android:textAppearanceMedium"
-                      android:lineSpacingMultiplier="1.2"
-                      android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:text="lorem_ipsum"
-                      android:padding="16dp" />
-
-        </ScrollView>
-
-        <ProgressBar android:id="@+id/loading_spinner"
-                     style="?android:progressBarStyleLarge"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:layout_gravity="center" />
-
-    </FrameLayout>
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="startScale"
+            android:text="scale"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="startAlpha"
+            android:text="alpha"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="startRotate"
+            android:text="rotate"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="startTranslate"
+            android:text="translate"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_anim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="大"
+        android:textSize="40dp"
+        android:textColor="#561214"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="startFrame"/>
+    <ImageView
+        android:id="@+id/im_frame"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"/>
 </LinearLayout>

@@ -30,32 +30,36 @@ public class SQLiteActivity extends AppCompatActivity {
         ContentResolver resolver = getContentResolver();
 
         SQLiteDatabase db = openOrCreateDatabase("myfriend.db", Context.MODE_PRIVATE,null);
-        db.execSQL("CREATE TABLE person (_id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, age SMALLINT)");
-        Person person = new Person("holy",true,18);
-        db.execSQL("INSERT INTO person VALUES (NULL, ?, ?)", new Object[]{person.name, person.age});
+        try {
+            db.execSQL("CREATE TABLE person (_id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, age SMALLINT)");
+            Person person = new Person("holy", true, 18);
+            db.execSQL("INSERT INTO person VALUES (NULL, ?, ?)", new Object[]{person.name, person.age});
 
-        person.name = "david";
-        person.age = 33;
-        //ContentValues以键值对的形式存放数据
-        ContentValues cv = new ContentValues();
-        cv.put("name", person.name);
-        cv.put("age", person.age);
-        //插入ContentValues中的数据
-        db.insert("person", null, cv);
+            person.name = "david";
+            person.age = 33;
+            //ContentValues以键值对的形式存放数据
+            ContentValues cv = new ContentValues();
+            cv.put("name", person.name);
+            cv.put("age", person.age);
+            //插入ContentValues中的数据
+            db.insert("person", null, cv);
 
-        cv = new ContentValues();
-        cv.put("age", 35);
-        //更新数据
-        db.update("person", cv, "name = ?", new String[]{"john"});
+            cv = new ContentValues();
+            cv.put("age", 35);
+            //更新数据
+            db.update("person", cv, "name = ?", new String[]{"john"});
 
-        Cursor c = db.rawQuery("SELECT * FROM person WHERE age >= ?", new String[]{"33"});
-        while (c.moveToNext()) {
-            int _id = c.getInt(c.getColumnIndex("_id"));
-            String name = c.getString(c.getColumnIndex("name"));
-            int age = c.getInt(c.getColumnIndex("age"));
-            tv.setText("_id=>" + _id + ", name=>" + name + ", age=>" + age);
+            Cursor c = db.rawQuery("SELECT * FROM person WHERE age >= ?", new String[]{"33"});
+            while (c.moveToNext()) {
+                int _id = c.getInt(c.getColumnIndex("_id"));
+                String name = c.getString(c.getColumnIndex("name"));
+                int age = c.getInt(c.getColumnIndex("age"));
+                tv.setText("_id=>" + _id + ", name=>" + name + ", age=>" + age);
+            }
+            c.close();
+        }catch (Exception e) {
+            Log.d("sql",e.toString());
         }
-        c.close();
 
         //关闭当前数据库
         db.close();

@@ -33,6 +33,11 @@
         </activity>
         <activity android:name=".lifecycle.LifeCycleActivity"
             />
+        <activity android:name=".lifecycle.SecondActivity1" android:launchMode="standard"
+            />
+        <activity android:name=".lifecycle.SecondActivity2" android:launchMode="singleTop"/>
+        <activity android:name=".lifecycle.SecondActivity3" android:launchMode="singleTask"/>
+        <activity android:name=".lifecycle.SecondActivity4" android:launchMode="singleInstance"/>
         <activity android:name=".lifecycle.SecondActivity"
             />
         <activity android:name=".sqlite.SQLiteActivity"
@@ -47,6 +52,18 @@
             />
         <activity android:name=".bitmap.ImageActivity"
             />
+        <activity android:name=".web.LoadActivity"
+            />
+        <activity android:name=".AnimationActivity"
+            />
+        <activity android:name=".NotifyActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.SEND"/>
+            <category android:name="android.intent.category.DEFAULT"/>
+            <data android:mimeType="text/plain"/>
+            <data android:mimeType="image/*"/>
+        </intent-filter>
+        </activity>
         <activity
         android:name=".BarActivity"
         android:label="what"

@@ -10,6 +10,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="startSecondAcitivity"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="standard"
+        android:onClick="startSecondAcitivity1"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="singleTop"
+        android:onClick="startSecondAcitivity2"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="singleTask"
+        android:onClick="startSecondAcitivity3"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="singleInstance"
+        android:onClick="startSecondAcitivity4"/>
     <TextView
         android:id="@+id/tv_lifeCycle"
         android:layout_width="match_parent"

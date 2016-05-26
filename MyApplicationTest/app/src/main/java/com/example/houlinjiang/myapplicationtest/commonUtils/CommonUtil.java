@@ -8,6 +8,9 @@ import android.util.Log;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.Collection;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by houlin.jiang on 2016/4/29.
@@ -67,5 +70,9 @@ public class CommonUtil {
         } else {
             return false;
         }
+    }
+
+    public static <T> boolean isEmpty(Collection<T> array) {
+        return array == null || array.size() == 0;
     }
 }

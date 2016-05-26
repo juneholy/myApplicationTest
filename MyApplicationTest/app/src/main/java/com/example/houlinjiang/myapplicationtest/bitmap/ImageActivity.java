@@ -38,7 +38,6 @@ public class ImageActivity extends FragmentActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image);
         mPager = (ViewPager) findViewById(R.id.pager);
-
         List<String> urlList = new ArrayList<String>();
         urlList.add("http://static.oschina.net/uploads/space/2016/0418/081400_PAqf_12.jpg");
         urlList.add("http://static.oschina.net/uploads/space/2016/0418/081400_PAqf_12.jpg");

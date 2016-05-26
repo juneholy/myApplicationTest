@@ -3,6 +3,7 @@ package com.example.houlinjiang.myapplicationtest.lifecycle;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -26,7 +27,10 @@ public class LifeCycleActivity extends Activity {
     @Override
     protected void onStart() {
         Log.d("lifecycle", "=======onStart=======");
-        String log = tvLog.getText()  + "====Activity1===onStart=======" + "\n";
+        String log = tvLog.getText() + "====Activity1===onStart=======" + "\n";
+        if (TextUtils.isEmpty(tvLog.getText())) {
+            log = "====Activity1===onStart=======" + "\n";
+        }
         tvLog.setText(log);
         super.onStart();
     }
@@ -52,6 +56,11 @@ public class LifeCycleActivity extends Activity {
 
 
     @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+    }
+
+    @Override
     protected void onPause() {
         Log.d("lifecycle","====Activity1===onPause=======");
         String log = tvLog.getText()  + "====Activity1===onPause=======" + "\n";
@@ -61,7 +70,7 @@ public class LifeCycleActivity extends Activity {
 
     @Override
     protected void onStop() {
-        Log.d("lifecycle","====Activity1===onPause=======");
+        Log.d("lifecycle", "====Activity1===onPause=======");
         String log = tvLog.getText()  + "====Activity1===onResume=======" + "\n";
         tvLog.setText(log);
 
@@ -83,4 +92,25 @@ public class LifeCycleActivity extends Activity {
     }
 
 
+    public void startSecondAcitivity1(View view) {
+        Intent intent = new Intent(this,SecondActivity1.class);
+        intent.putExtra("log", tvLog.getText());
+        startActivity(intent);
+    }
+
+    public void startSecondAcitivity2(View view) {
+        Intent intent = new Intent(this,SecondActivity2.class);
+        intent.putExtra("log", tvLog.getText());
+        startActivity(intent);
+    }
+    public void startSecondAcitivity3(View view) {
+        Intent intent = new Intent(this,SecondActivity3.class);
+        intent.putExtra("log", tvLog.getText());
+        startActivity(intent);
+    }
+    public void startSecondAcitivity4(View view) {
+        Intent intent = new Intent(this,SecondActivity4.class);
+        intent.putExtra("log", tvLog.getText());
+        startActivity(intent);
+    }
 }

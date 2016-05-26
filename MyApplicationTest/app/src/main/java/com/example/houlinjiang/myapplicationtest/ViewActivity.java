@@ -12,19 +12,8 @@ public class ViewActivity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view);
+        setContentView(R.layout.activity_eventbus);
     }
 
-    public void onButtonClick(View view) {
-        Toast.makeText(this, "normal button clicked",Toast.LENGTH_SHORT).show();
-    }
 
-    public void onImageButtonClick(View view) {
-        Toast.makeText(this, "image button clicked",Toast.LENGTH_SHORT).show();
-    }
-
-    public void onImageClick(View view) {
-        Toast.makeText(this, "I am imageView",Toast.LENGTH_SHORT).show();
-
-    }
 }

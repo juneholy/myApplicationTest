@@ -10,9 +10,9 @@ import android.widget.TextView;
 import com.example.houlinjiang.myapplicationtest.R;
 
 /**
- * Created by houlin.jiang on 2016/4/14.
+ * Created by houlin.jiang on 2016/5/23.
  */
-public class SecondActivity extends Activity{
+public class SecondActivity3 extends Activity{
     TextView tvLog ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,21 +21,21 @@ public class SecondActivity extends Activity{
         setContentView(R.layout.second_activity);
         tvLog = (TextView) findViewById(R.id.tv_second);
         String log = intent.getStringExtra("log");
-        log = log  + "====Activity2===onCreate=======" + "\n";
+        log = log   + "====Activity2===onCreate=======" + "\n";
         tvLog.setText(log);
     }
 
     @Override
     protected void onStart() {
         Log.d("lifecycle", "=======onStart=======");
-        String log = tvLog.getText()  + "====Activity2===onStart=======" + "\n";
+        String log = tvLog.getText()  + this.toString() + "\n"+ "====Activity2===onStart=======" + "\n";
         tvLog.setText(log);
         super.onStart();
     }
 
     @Override
     protected void onRestart() {
-        Log.d("lifecycle","====Activity1===onRestart=======");
+        Log.d("lifecycle","====Activity2===onRestart=======");
         String log = tvLog.getText()  + "====Activity2===onRestart=======" + "\n";
         tvLog.setText(log);
         super.onRestart();
@@ -43,7 +43,7 @@ public class SecondActivity extends Activity{
 
     @Override
     protected void onResume() {
-        Log.d("lifecycle", "====Activity1===onResume=======");
+        Log.d("lifecycle", "====Activity2===onResume=======");
         String log = tvLog.getText()  + "====Activity2===onResume=======" + "\n";
         tvLog.setText(log);
         super.onResume();
@@ -51,7 +51,7 @@ public class SecondActivity extends Activity{
 
     @Override
     protected void onPause() {
-        Log.d("lifecycle","====Activity1===onPause=======");
+        Log.d("lifecycle","====Activity2===onPause=======");
         String log = tvLog.getText()  + "====Activity2===onPause=======" + "\n";
         tvLog.setText(log);
         super.onPause();
@@ -59,7 +59,7 @@ public class SecondActivity extends Activity{
 
     @Override
     protected void onStop() {
-        Log.d("lifecycle","====Activity1===onPause=======");
+        Log.d("lifecycle","====Activity2===onPause=======");
         String log = tvLog.getText()  + "====Activity2===onResume=======" + "\n";
         tvLog.setText(log);
 
@@ -68,19 +68,30 @@ public class SecondActivity extends Activity{
 
     @Override
     protected void onDestroy() {
-        Log.d("lifecycle", "====Activity1===onDestroy=======");
+        Log.d("lifecycle", "====Activity2===onDestroy=======");
         String log = tvLog.getText()  + "====Activity2===onDestroy=======" + "\n";
         tvLog.setText(log);
         super.onDestroy();
     }
 
     @Override
-    public void onBackPressed() {
-        Intent intent = new Intent(this,LifeCycleActivity.class);
-        intent.putExtra("log",tvLog.getText());
-        super.onBackPressed();
+    protected void onNewIntent(Intent intent) {
+        Log.d("lifecycle", "====Activity2===onNewIntent=======");
+        String log = tvLog.getText()  + "====Activity2===onNewIntent=======" + "\n";
+        tvLog.setText(log);
+        super.onDestroy();
+        super.onNewIntent(intent);
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this,LifeCycleActivity.class);
+        intent.putExtra("log", tvLog.getText());
+        super.onBackPressed();
+    }
     public void restartThis(View view) {
+        Intent intent = new Intent(this,SecondActivity3.class);
+        intent.putExtra("log", tvLog.getText());
+        startActivity(intent);
     }
 }

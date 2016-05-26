@@ -91,6 +91,11 @@
             android:layout_height="wrap_content"
             android:onClick="openAnimation"
             android:text="animation"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="openWebView"
+                android:text="webView"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
